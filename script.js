@@ -113,11 +113,11 @@ function animate() {
         for (let j = 0; j < particule.length; j++) {
             if (i != j) {
                 // console.log(i, j, particule.length);
-                if((particule[j].posY - particule[i].posY) != 0) particule[i].accelY = -1 * ((Math.pow(10, 12) / Math.PI * 4 * e) * ((particule[i].charge * particule[j].charge) / (Math.pow(Math.sqrt(Math.pow(particule[j].posX - particule[i].posX, 2) + Math.pow(particule[j].posY - particule[i].posY, 2)), 3)) )) * (particule[j].posY - particule[i].posY) / particule[i].mass;
-                if((particule[j].posX - particule[i].posX) != 0) particule[i].accelX = -1 * ((Math.pow(10, 12) / Math.PI * 4 * e) * ((particule[i].charge * particule[j].charge) / (Math.pow(Math.sqrt(Math.pow(particule[j].posX - particule[i].posX, 2) + Math.pow(particule[j].posY - particule[i].posY, 2)), 3)) )) * (particule[j].posX - particule[i].posX) / particule[i].mass;
+                if((particule[j].posY - particule[i].posY) != 0) particule[i].accelY += -1 * ((Math.pow(10, 12) / Math.PI * 4 * e) * ((particule[i].charge * particule[j].charge) / (Math.pow(Math.sqrt(Math.pow(particule[j].posX - particule[i].posX, 2) + Math.pow(particule[j].posY - particule[i].posY, 2)), 3)) )) * (particule[j].posY - particule[i].posY) / particule[i].mass;
+                if((particule[j].posX - particule[i].posX) != 0) particule[i].accelX += -1 * ((Math.pow(10, 12) / Math.PI * 4 * e) * ((particule[i].charge * particule[j].charge) / (Math.pow(Math.sqrt(Math.pow(particule[j].posX - particule[i].posX, 2) + Math.pow(particule[j].posY - particule[i].posY, 2)), 3)) )) * (particule[j].posX - particule[i].posX) / particule[i].mass;
 
-                if((particule[j].posY - particule[i].posY) != 0) particule[i].accelY = G * ((particule[i].mass * particule[j].mass) / (Math.pow(Math.sqrt(Math.pow(particule[j].posX - particule[i].posX, 2) + Math.pow(particule[j].posY - particule[i].posY, 2)), 3)) ) * (particule[j].posY - particule[i].posY) / particule[i].mass;
-                if((particule[j].posX - particule[i].posX) != 0) particule[i].accelX = G * ((particule[i].mass * particule[j].mass) / (Math.pow(Math.sqrt(Math.pow(particule[j].posX - particule[i].posX, 2) + Math.pow(particule[j].posY - particule[i].posY, 2)), 3)) ) * (particule[j].posX - particule[i].posX) / particule[i].mass;
+                if((particule[j].posY - particule[i].posY) != 0) particule[i].accelY += G * ((particule[i].mass * particule[j].mass) / (Math.pow(Math.sqrt(Math.pow(particule[j].posX - particule[i].posX, 2) + Math.pow(particule[j].posY - particule[i].posY, 2)), 3)) ) * (particule[j].posY - particule[i].posY) / particule[i].mass;
+                if((particule[j].posX - particule[i].posX) != 0) particule[i].accelX += G * ((particule[i].mass * particule[j].mass) / (Math.pow(Math.sqrt(Math.pow(particule[j].posX - particule[i].posX, 2) + Math.pow(particule[j].posY - particule[i].posY, 2)), 3)) ) * (particule[j].posX - particule[i].posX) / particule[i].mass;
             }
         }
     }
